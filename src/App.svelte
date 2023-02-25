@@ -1,9 +1,11 @@
 <script lang="ts">
-	import { get } from 'svelte/store';
 	import svelteLogo from './assets/svelte.svg';
 	import { store, incrementNo, incrementYes } from './store';
 
 	let showResult = false;
+
+	$: yes = $store.percentage.yes;
+	$: no = $store.percentage.no;
 </script>
 
 <div class="flex flex-col p-8 w-full bg-gray-100 shadow-md rounded-lg">
@@ -27,12 +29,12 @@
 				<div class="items-center p-4" style="font-size: 40px">🚀</div>
 				<div class="mt-4 flex flex-row items-center">
 					<div class="text-gray-700 font-normal text-xl mr-3">
-						{$store.percentage.yes}%
+						{yes}%
 					</div>
 					<div class="w-full bg-gray-200 rounded-full h-5">
 						<div
 							class="bg-indigo-400 h-5 rounded-full transition-all duration-200"
-							style={`width: ${$store.percentage.yes}%;`}
+							style={`width: ${yes}%;`}
 						/>
 					</div>
 				</div>
@@ -41,12 +43,12 @@
 				<div class="items-center p-4" style="font-size: 40px">👍</div>
 				<div class="mt-4 flex flex-row items-center">
 					<div class="text-gray-700 font-normal text-xl mr-3">
-						{$store.percentage.no}%
+						{no}%
 					</div>
 					<div class="w-full bg-gray-200 rounded-full h-5">
 						<div
 							class="bg-indigo-400 h-5 rounded-full transition-all duration-200"
-							style={`width: ${$store.percentage.no}%;`}
+							style={`width: ${no}%;`}
 						/>
 					</div>
 				</div>
