@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { get } from 'svelte/store';
+	import { get } from 'svelte/store';
 	import svelteLogo from './assets/svelte.svg';
 	import { store, incrementNo, incrementYes } from './store';
 
@@ -19,16 +19,16 @@
 		class="text-gray-700 font-bold text-xl text-center p-4"
 		style="font-size: 40px; line-height:2.5rem;"
 	>
-		Are you enjoying this talk?
+		Did you like the speech?
 	</div>
 	{#if showResult}
 		<div class="flex gap-2">
 			<div class="w-full flex flex-col">
-				<div class="items-center p-4" style="font-size: 40px">
-					🚀
-				</div>
+				<div class="items-center p-4" style="font-size: 40px">🚀</div>
 				<div class="mt-4 flex flex-row items-center">
-					<div class="text-gray-700 font-normal text-xl mr-3">{$store.percentage.yes}%</div>
+					<div class="text-gray-700 font-normal text-xl mr-3">
+						{$store.percentage.yes}%
+					</div>
 					<div class="w-full bg-gray-200 rounded-full h-5">
 						<div
 							class="bg-indigo-400 h-5 rounded-full transition-all duration-200"
@@ -38,11 +38,11 @@
 				</div>
 			</div>
 			<div class="w-full flex flex-col">
-				<div class="items-center p-4" style="font-size: 40px">
-					👍
-				</div>
+				<div class="items-center p-4" style="font-size: 40px">👍</div>
 				<div class="mt-4 flex flex-row items-center">
-					<div class="text-gray-700 font-normal text-xl mr-3">{$store.percentage.no}%</div>
+					<div class="text-gray-700 font-normal text-xl mr-3">
+						{$store.percentage.no}%
+					</div>
 					<div class="w-full bg-gray-200 rounded-full h-5">
 						<div
 							class="bg-indigo-400 h-5 rounded-full transition-all duration-200"
